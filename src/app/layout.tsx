@@ -3,7 +3,7 @@ import { Cabin } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider/theme-provider";
 import { ThemeSwitcher } from "@/components/theme-switcher/theme-switcher";
-import ToolbarDynamic from "@/components/toolbar-dynamic/toolbar-dynamic";
+import Dock from "@/components/toolbar/toolbar";
 
 const CabinSans = Cabin({
   subsets: ["latin"],
@@ -30,7 +30,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ToolbarDynamic />
+          <Dock />
           <ThemeSwitcher />
           {children}
         </ThemeProvider>
