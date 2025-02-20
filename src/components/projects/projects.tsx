@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { Goal, Gift } from "lucide-react";
+import { Goal, Gift, FormInput } from "lucide-react";
 import { Features, FeaturesDataProps } from "../ui/features";
 
 const PROJECT_DATA: FeaturesDataProps[] = [
@@ -19,6 +19,15 @@ const PROJECT_DATA: FeaturesDataProps[] = [
     image:
       "https://res.cloudinary.com/eldoraui/image/upload/v1734107781/Screenshot_2024-12-13_at_10.06.08_PM_molet1.png",
     icon: <Gift className="w-6 h-6 text-primary" />,
+  },
+  {
+    id: 3,
+    title: "3. Portfolio",
+    content:
+      "Mein Portfolio, dass die meisten Projekte und meine Erfahrungen darstellt.",
+    image:
+      "https://i.ibb.co/DDRSsL5f/Portfolio.png",
+    icon: <FormInput className="w-6 h-6 text-primary" />,
   },
 ];
 
