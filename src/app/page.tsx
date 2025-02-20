@@ -63,11 +63,7 @@ const HeroTitle: FC = () => {
         <h1 className="text-5xl font-bold tracking-tight mb-2">
           Leon Achteresch
         </h1>
-        <p
-          className="bg-gradient-to-b from-foreground to-[#7b9cda] 
-                     bg-clip-text text-2xl font-semibold tracking-tight 
-                     text-transparent"
-        >
+        <p className="bg-gradient-to-b from-foreground to-[#7b9cda] bg-clip-text text-2xl font-semibold tracking-tight text-transparent">
           Software Entwickler
         </p>
       </div>
