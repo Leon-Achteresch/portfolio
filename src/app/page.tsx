@@ -35,23 +35,17 @@ const HeroTitle: FC = () => {
   return (
     <div className="relative flex flex-col items-center gap-6 mt-8">
       <div className="relative">
-        {/* Hintergrund-Blob mit Farbverlauf */}
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
                      h-72 w-72 rounded-full bg-gradient-to-tr from-pink-500/60 
                      via-purple-500/60 to-blue-500/60 blur-[32px]"
         />
-
-        {/* Äußerer Container für den Glow-Effekt */}
         <div className="relative">
-          {/* Glow Border */}
           <div
             className="absolute inset-0 rounded-2xl bg-gradient-to-tr 
                        from-pink-500/80 via-purple-500/80 to-blue-500/80 
                        blur-md p-[2px]"
           />
-
-          {/* Bild-Container */}
           <div className="relative rounded-2xl bg-background/90 p-1">
             <Image
               src={LogoImage}
