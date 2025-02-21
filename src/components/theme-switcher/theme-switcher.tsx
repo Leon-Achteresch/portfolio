@@ -16,7 +16,7 @@ export function ThemeSwitcher() {
   const { setTheme } = useTheme();
 
   return (
-    <div className="absolute left-4 top-4 z-[100]">
+    <div className="absolute right-4 top-4 z-[100]">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" size="icon">
