@@ -42,7 +42,7 @@ const interests = [
 
 export default function AboutMe() {
   return (
-    <section className="flex  mx-auto px-16 py-16 min-h-screen justify-center">
+    <section className="flex mx-auto px-16 py-16 min-h-screen justify-center">
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
