@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tilt } from "@/components/ui/tilt";
 import Image from "next/image";
 import LogoImage from "@/assets/Images/logo.png";
+import { AboutMe } from "@/components/about-me/about-me";
 
 const SKILL_BADGES = [
   { label: "React", id: "react" },
@@ -113,6 +114,7 @@ const Home: FC = () => {
         <SparklesBackground />
       </section>
       <Projects />
+      <AboutMe />
     </main>
   );
 };
