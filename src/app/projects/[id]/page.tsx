@@ -5,7 +5,7 @@ import { Calendar, Clock, Users, Github } from "lucide-react";
 import CodeBlock from "@/components/ui/code-block";
 
 export interface Project {
-  id: number;
+  projectId: number;
   title: string;
   content: string;
   description: string;
@@ -26,13 +26,13 @@ export interface Project {
 }
 
 
-async function fetchProject(id: number): Promise<Project | null> {
+async function fetchProject(projectId: number): Promise<Project | null> {
   const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || ""}/api/projects`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ id }),
+    body: JSON.stringify({ projectId }),
 
   });
 
@@ -49,19 +49,18 @@ const statusColors = {
   "on-hold": "bg-yellow-500",
 };
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
-
-export default async function ProjectPage({ params }: PageProps) {
-  const id = Number(params.id);
-  if (isNaN(id)) {
+export default async function ProjectPage({
+  params,
+}: {
+  params: { id: string } | Promise<{ id: string }>;
+}) {
+  const { id } = await Promise.resolve(params);
+  const projectId = Number(id);
+  if (isNaN(projectId)) {
     notFound();
   }
 
-  const project = await fetchProject(id);
+  const project = await fetchProject(projectId);
 
   if (!project) {
     notFound();
@@ -106,7 +105,7 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
         </div>
 
-        <div className="grid gap-3 sm:gap-4 grid-cols-1 xs:grid-cols-2 md:grid-cols-3">
+        <div className="grprojectId gap-3 sm:gap-4 grprojectId-cols-1 xs:grprojectId-cols-2 md:grprojectId-cols-3">
           <Card className="bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10">
             <CardContent className="flex items-center gap-2 p-4 sm:pt-6">
               <Calendar className="h-4 w-4 text-pink-500 shrink-0" />
@@ -155,7 +154,7 @@ export default async function ProjectPage({ params }: PageProps) {
             <h2 className="text-lg sm:text-xl font-semibold">
               Code Example
             </h2>
-            <div className="overflow-hidden">
+            <div className="overflow-hprojectIdden">
               <CodeBlock
                 code={project.codeSnippet.code}
                 language={project.codeSnippet.language}
