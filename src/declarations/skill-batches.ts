@@ -1,0 +1,18 @@
+export const SKILL_BADGES = [
+  { label: "React", id: "react" },
+  { label: "C#", id: "csharp" },
+  { label: "JavaScript", id: "javascript" },
+  { label: "TypeScript", id: "typescript" },
+  { label: "CSS", id: "css" },
+  { label: "Next.js", id: "nextjs" },
+  { label: "Node.js", id: "nodejs" },
+  { label: "MongoDB", id: "mongodb" },
+  { label: "PostgreSQL", id: "postgresql" },
+  { label: "MSSQL", id: "mssql" },
+  { label: "OracleSQL", id: "oraclesql" },
+  { label: "Git", id: "git" },
+  { label: "Java", id: "java" },
+  { label: "CI/CD", id: "cicd" },
+  { label: "Jira", id: "jira" },
+  { label: "Python", id: "python" },
+] as const;

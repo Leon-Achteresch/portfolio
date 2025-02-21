@@ -15,7 +15,9 @@ export function Dock() {
           <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-[72px] max-w-full rounded-3xl border border-gray-200/60 bg-gray-200/60 shadow-sm dark:border-gray-600/60 dark:bg-gray-800/60" />
           <div className="flex items-end overflow-x-auto rounded-3xl pl-2">
             <AppIcon imgSrc={PhoneImage} />
-            <AppIcon imgSrc={GithubImage} withoutBackground={true} />
+            <Link href="https://github.com/Leon-Achteresch" target="_blank">
+              <AppIcon imgSrc={GithubImage} withoutBackground={true} />
+            </Link>
             <Link href="https://www.modul.day" target="_blank">
               <AppIcon imgSrc={RobotImage} />
             </Link>
