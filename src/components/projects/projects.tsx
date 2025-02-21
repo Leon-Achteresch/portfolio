@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { Goal, Gift } from "lucide-react";
+import { Goal, Gift, FormInput } from "lucide-react";
 import { Features, FeaturesDataProps } from "../ui/features";
 
 const PROJECT_DATA: FeaturesDataProps[] = [
@@ -8,8 +8,7 @@ const PROJECT_DATA: FeaturesDataProps[] = [
     title: "1. MatchDarts",
     content:
       "Eine PWA Web App, die es ermöglicht, mit einem Roboter und gegen Freunde Darts zu spielen.",
-    image:
-      "https://res.cloudinary.com/eldoraui/image/upload/v1734107781/Screenshot_2024-12-13_at_10.06.08_PM_molet1.png",
+    image: "MatchDarts.png",
     icon: <Goal className="w-6 h-6 text-primary" />,
   },
   {
@@ -21,14 +20,20 @@ const PROJECT_DATA: FeaturesDataProps[] = [
       "https://res.cloudinary.com/eldoraui/image/upload/v1734107781/Screenshot_2024-12-13_at_10.06.08_PM_molet1.png",
     icon: <Gift className="w-6 h-6 text-primary" />,
   },
+  {
+    id: 3,
+    title: "3. Portfolio",
+    content:
+      "Mein Portfolio, dass die meisten Projekte und meine Erfahrungen darstellt.",
+    image:
+      "https://i.ibb.co/DDRSsL5f/Portfolio.png",
+    icon: <FormInput className="w-6 h-6 text-primary" />,
+  },
 ];
 
 export const Projects: FC = () => {
   return (
-    <section
-      aria-label="Projekte"
-      className="py-12 bg-background"
-    >
+    <section aria-label="Projekte" className="bg-background h-screen flex items-center justify-center">
       <div className="container mx-auto px-4">
         <h1 className="mb-8 text-center text-4xl font-bold text-foreground">
           Meine Projekte
