@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 type AccordionItemProps = {
   children: React.ReactNode;
@@ -17,14 +18,14 @@ const AccordionItem = forwardRef<HTMLDivElement, AccordionItemProps>(
     <Accordion.Item
       className={cn(
         "mt-px overflow-hidden focus-within:relative focus-within:z-10",
-        className,
+        className
       )}
       {...props}
       ref={forwardedRef}
     >
       {children}
     </Accordion.Item>
-  ),
+  )
 );
 AccordionItem.displayName = "AccordionItem";
 
@@ -39,7 +40,7 @@ const AccordionTrigger = forwardRef<HTMLButtonElement, AccordionTriggerProps>(
       <Accordion.Trigger
         className={cn(
           "group flex flex-1 cursor-pointer items-center justify-between px-5 text-[15px] leading-none outline-none",
-          className,
+          className
         )}
         {...props}
         ref={forwardedRef}
@@ -47,7 +48,7 @@ const AccordionTrigger = forwardRef<HTMLButtonElement, AccordionTriggerProps>(
         {children}
       </Accordion.Trigger>
     </Accordion.Header>
-  ),
+  )
 );
 AccordionTrigger.displayName = "AccordionTrigger";
 type AccordionContentProps = {
@@ -60,14 +61,14 @@ const AccordionContent = forwardRef<HTMLDivElement, AccordionContentProps>(
     <Accordion.Content
       className={cn(
         "data-[state=closed]:animate-slide-up data-[state=open]:animate-slide-down overflow-hidden text-[15px] font-medium",
-        className,
+        className
       )}
       {...props}
       ref={forwardedRef}
     >
       <div className="px-5 py-2">{children}</div>
     </Accordion.Content>
-  ),
+  )
 );
 AccordionContent.displayName = "AccordionContent";
 
@@ -100,6 +101,7 @@ export function Features({
     once: true,
     amount: 0.5,
   });
+  const router = useRouter();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -135,7 +137,7 @@ export function Features({
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex !== undefined ? (prevIndex + 1) % data.length : 0,
+        prevIndex !== undefined ? (prevIndex + 1) % data.length : 0
       );
     }, collapseDelay);
 
@@ -162,7 +164,7 @@ export function Features({
         const cardWidth = carousel.querySelector(".card")?.clientWidth || 0;
         const newIndex = Math.min(
           Math.floor(scrollLeft / cardWidth),
-          data.length - 1,
+          data.length - 1
         );
         setCurrentIndex(newIndex);
       };
@@ -171,6 +173,10 @@ export function Features({
       return () => carousel.removeEventListener("scroll", handleScroll);
     }
   }, [data.length]);
+
+  const handleProjectClick = (id: number) => {
+    router.push(`/projects/${id}`);
+  };
 
   return (
     <section ref={ref} id="features">
@@ -270,11 +276,12 @@ export function Features({
                   key={currentIndex}
                   src={data[currentIndex].image}
                   alt="feature"
-                  className="aspect-auto size-full rounded-xl border border-neutral-300/50 object-cover object-left-top p-1 shadow-lg"
+                  className="aspect-auto cursor-pointer size-full rounded-xl border border-neutral-300/50 object-cover object-left-top p-1 shadow-lg"
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
+                  onClick={() => handleProjectClick(data[currentIndex].id)}
                 />
               ) : data[currentIndex]?.video ? (
                 <video

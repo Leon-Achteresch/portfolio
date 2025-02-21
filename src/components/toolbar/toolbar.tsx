@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function Dock() {
   return (
-    <div className="relative w-full" id="dock">
+    <div className="relative w-full z-[100]" id="dock">
       <div className="-translate-x-1/2 fixed bottom-2 left-1/2 mx-auto max-w-full transform-gpu pt-4">
         <div className="relative">
           <div

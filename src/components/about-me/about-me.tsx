@@ -68,8 +68,7 @@ export default function AboutMe() {
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               Ich bin ein Softwareentwickler, der sich für die Entwicklung von modernen Webanwendungen und Systemen
               einsetzt. Meine Fähigkeiten umfassen die Entwicklung von Frontend-Anwendungen, Backend-Systemen,
-              Datenbanken und APIs. Ich bin ein Teamführer, der sich für die Entwicklung von Projekten und Teams
-              einsetzt und mich auf die Erfolgschancen von Unternehmen und Organisationen spezialisiert.
+              Datenbanken und APIs.
             </p>
           </div>
 

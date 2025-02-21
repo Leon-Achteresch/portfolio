@@ -15,4 +15,5 @@ export const SKILL_BADGES = [
   { label: "CI/CD", id: "cicd" },
   { label: "Jira", id: "jira" },
   { label: "Python", id: "python" },
+  { label: "Delphi", id: "delphi" },
 ] as const;
