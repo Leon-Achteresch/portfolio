@@ -324,8 +324,8 @@ export function Features({
                       }}
                     ></div>
                   </div>
-                  <h2 className="text-xl font-bold">{item.title}</h2>
-                  <p className="mx-0 max-w-sm text-balance text-sm">
+                  <h2 className="text-xl font-bold text-foreground">{item.title}</h2>
+                  <p className="mx-0 max-w-sm text-balance text-sm text-foreground">
                     {item.content}
                   </p>
                 </div>
