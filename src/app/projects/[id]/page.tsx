@@ -49,11 +49,13 @@ const statusColors = {
   "on-hold": "bg-yellow-500",
 };
 
-export default async function ProjectPage({
-  params,
-}: Readonly<{
-  params: { id: string };
-}>) {
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default async function ProjectPage({ params }: PageProps) {
   const id = Number(params.id);
   if (isNaN(id)) {
     notFound();
