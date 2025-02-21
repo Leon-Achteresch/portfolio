@@ -85,18 +85,7 @@ export default function AboutMe() {
                 <span className="sr-only">LinkedIn Profile</span>
               </Link>
             </Button>
-            {/* <Button variant="outline" size="icon" asChild className="text-background bg-foreground">
-              <Link href="https://twitter.com" target="_blank">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter Profile</span>
-              </Link>
-            </Button> */}
-            <Button variant="outline" size="icon" asChild className="text-background bg-foreground">
-              <Link href="mailto:leon.achteresch@gmail.com">
-                <Mail className="h-5 w-5" />
-                <span className="sr-only">Email Contact</span>
-              </Link>
-            </Button>
+           
           </div>
         </motion.div>
 
@@ -159,7 +148,7 @@ export default function AboutMe() {
               Informationen.
             </p>
             <Button asChild className="w-full animate-buttonheartbeat">
-              <Link href="mailto:contact@example.com">Kontakt aufnehmen</Link>
+              <Link href="mailto:leon.achteresch@gmail.com">Kontakt aufnehmen</Link>
             </Button>
           </Card>
         </motion.div>
