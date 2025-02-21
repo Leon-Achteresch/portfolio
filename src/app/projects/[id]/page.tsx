@@ -5,7 +5,7 @@ import { Calendar, Clock, Users, Github } from "lucide-react";
 import CodeBlock from "@/components/ui/code-block";
 
 export interface Project {
-  projectId: number;
+  id: number;
   title: string;
   content: string;
   description: string;
@@ -32,7 +32,7 @@ async function fetchProject(projectId: number): Promise<Project | null> {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ projectId }),
+    body: JSON.stringify({ id : projectId }),
 
   });
 
@@ -52,7 +52,7 @@ const statusColors = {
 export default async function ProjectPage({
   params,
 }: {
-  params: { id: string } | Promise<{ id: string }>;
+  params: Promise<{ id: string }>;
 }) {
   const { id } = await Promise.resolve(params);
   const projectId = Number(id);
@@ -105,7 +105,7 @@ export default async function ProjectPage({
           </div>
         </div>
 
-        <div className="grprojectId gap-3 sm:gap-4 grprojectId-cols-1 xs:grprojectId-cols-2 md:grprojectId-cols-3">
+        <div className="grid gap-3 sm:gap-4 grid-cols-1 xs:grid-cols-2 md:grid-cols-3">
           <Card className="bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10">
             <CardContent className="flex items-center gap-2 p-4 sm:pt-6">
               <Calendar className="h-4 w-4 text-pink-500 shrink-0" />
