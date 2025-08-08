@@ -1,4 +1,3 @@
-import { type LucideIcon } from 'lucide-react'
 
 export interface ProjectStatus {
   active: "active"
@@ -20,6 +19,11 @@ export interface Project {
   githubUrl?: string
   liveUrl?: string
   features: string[]
+  codeSnippet?: {
+    code: string
+    language: string
+    title: string
+  }
 }
 
 export interface ProjectResponse {

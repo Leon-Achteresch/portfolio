@@ -1,7 +1,7 @@
 import MailImage from "@/assets/Images/mail.webp";
 import PhoneImage from "@/assets/Images/phone.webp";
 import GithubImage from "@/assets/Images/github.png";
-import LogoImage from "@/assets/Images/logo.png";
+import LogoImage from "@/assets/Images/logo.jpg";
 import CVImage from "@/assets/Images/CV.jpg";
 import { IconData } from "@/types/toolbar.types";
 

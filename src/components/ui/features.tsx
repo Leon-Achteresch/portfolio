@@ -276,7 +276,7 @@ export function Features({
                   key={currentIndex}
                   src={data[currentIndex].image}
                   alt="feature"
-                  className="aspect-auto cursor-pointer size-full rounded-xl border border-neutral-300/50 object-cover object-left-top p-1 shadow-lg"
+                  className="aspect-auto cursor-pointer size-full rounded-xl border border-neutral-300/50 object-contain object-left-top p-1 shadow-lg"
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}

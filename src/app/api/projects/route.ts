@@ -1,16 +1,16 @@
-import { Project } from "@/app/projects/[id]/page";
-import { NextResponse } from "next/server";
+import { Project } from "@/types/project";
 import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
 const ENHANCED_PROJECT_DATA: Project[] = [
   {
     id: 1,
-    title: "MatchDarts",
+    title: "KickCompare",
     content:
-      "Eine PWA Web App, die es ermöglicht, mit einem Roboter und gegen Freunde Darts zu spielen.",
+      "Eine Website um die besten Fußballschuhe zu vergleichen und zu finden.",
     description:
-      "MatchDarts revolutioniert das klassische Dartspiel durch die Integration von Robotertechnologie und sozialen Gaming-Elementen. Die Progressive Web App ermöglicht es Spielern, sowohl gegen einen präzisen Dart-Roboter als auch gegen Freunde anzutreten.",
-    image: "MatchDarts.png",
+      "KickCompare revolutioniert das klassische Dartspiel durch die Integration von Robotertechnologie und sozialen Gaming-Elementen. Die Progressive Web App ermöglicht es Spielern, sowohl gegen einen präzisen Dart-Roboter als auch gegen Freunde anzutreten.",
+    image: "KickComparePage.png",
     status: "active",
     startDate: "2024-12-15",
     teamSize: 2,
@@ -102,36 +102,35 @@ const ENHANCED_PROJECT_DATA: Project[] = [
   },
   {
     id: 2,
-    title: "MatchKamp",
+    title: "Dartsync",
     content:
-      "Fußball-Fanatasy-Manager, bei dem man sein eigenes Bundelsiga-Team erstellen und auf Spiele tippen kann.",
+      "Darts-App mit Roboter-Integration und Multiplayer gegen Freunde.",
     description:
-      "MatchKamp ist eine umfassende Fantasy-Fußball-Plattform, die sich auf die Bundesliga spezialisiert. Benutzer können ihre Traumteams zusammenstellen, an Tippspielrunden teilnehmen und sich mit anderen Fußballfans messen.",
+      "Dartsync verbindet präzise Roboter-Technik mit einem sozialen Multiplayer-Erlebnis. Spiele lokal gegen den Roboter oder online gegen Freunde, verfolge Scores in Echtzeit und speichere Statistiken.",
     image:
-      "https://res.cloudinary.com/eldoraui/image/upload/v1734107781/Screenshot_2024-12-13_at_10.06.08_PM_molet1.png",
+      "DartSyncPage.png",
     status: "completed",
-    startDate: "2024-07-28",
-    teamSize: 4,
-    duration: "4 months",
+    startDate: "2024-08-01",
+    teamSize: 2,
+    duration: "5 months",
     techStack: [
       "React",
       "Next.js",
       "TypeScript",
-      "Flask",
-      "Python",
+      "Node.js",
       "TailwindCSS",
       "Supabase",
       "PostgreSQL",
     ],
-    githubUrl: "https://github.com/Leon-Achteresch/BuliPred",
-    liveUrl: "https://matchkamp.de/",
+    githubUrl: "https://github.com/Leon-Achteresch/KampDarts",
+    liveUrl: "https://kamp-darts.vercel.app/",
     features: [
-      "Team-Management",
-      "Live-Scoring",
-      "Tippspiel-System",
-      "Echtzeit-Updates",
-      "Spieler-Statistiken",
-      "Liga-Übersicht",
+      "Echtzeit-Scoring",
+      "Roboter-Steuerung",
+      "Online-Multiplayer",
+      "Statistiken",
+      "PWA-Installation",
+      "Offline-Modus",
     ],
   },
   {
@@ -141,7 +140,7 @@ const ENHANCED_PROJECT_DATA: Project[] = [
       "Mein Portfolio, dass die meisten Projekte und meine Erfahrungen darstellt.",
     description:
       "Ein modernes, responsives Portfolio, das meine Projekte, Fähigkeiten und beruflichen Erfahrungen präsentiert. Die Seite wurde mit Fokus auf Performance, Zugänglichkeit und benutzerfreundliches Design entwickelt.",
-    image: "https://i.ibb.co/DDRSsL5f/Portfolio.png",
+    image: "image.png",
     status: "completed",
     startDate: "2025-02-20",
     teamSize: 1,
@@ -169,7 +168,6 @@ const ENHANCED_PROJECT_DATA: Project[] = [
 
 export async function GET(request: NextRequest) {
   try {
-    // Simuliere eine Delay von 500ms, um die Ladesituation realistisch darzustellen.
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     return NextResponse.json(

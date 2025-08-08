@@ -15,6 +15,13 @@ const careerPath = [
     title: "Ausbildung Fachinformatiker Anwendungsentwicklung",
     description: "Ausbildung zum Fachinformatiker Anwendungsentwicklung",
   },
+  {
+    year: "2025",
+    title: "Softwareentwickler",
+    description: "Softwareentwickler",
+  },
+
+
 ]
 
 const interests = [
@@ -85,7 +92,7 @@ export default function AboutMe() {
                 <span className="sr-only">LinkedIn Profile</span>
               </Link>
             </Button>
-           
+
           </div>
         </motion.div>
 
@@ -156,4 +163,3 @@ export default function AboutMe() {
     </section>
   )
 }
-
