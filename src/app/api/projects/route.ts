@@ -35,6 +35,39 @@ const ENHANCED_PROJECT_DATA: Project[] = [
       "PWA-Installation",
       "Offline-Unterstützung",
     ],
+  },
+  {
+    id: 2,
+    title: "Dartsync",
+    content:
+      "Darts-App mit Roboter-Integration und Multiplayer gegen Freunde.",
+    description:
+      "Dartsync verbindet präzise Roboter-Technik mit einem sozialen Multiplayer-Erlebnis. Spiele lokal gegen den Roboter oder online gegen Freunde, verfolge Scores in Echtzeit und speichere Statistiken.",
+    image:
+      "DartSyncPage.png",
+    status: "completed",
+    startDate: "2024-08-01",
+    teamSize: 2,
+    duration: "5 months",
+    techStack: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "TailwindCSS",
+      "Supabase",
+      "PostgreSQL",
+    ],
+    githubUrl: "https://github.com/Leon-Achteresch/KampDarts",
+    liveUrl: "https://kamp-darts.vercel.app/",
+    features: [
+      "Echtzeit-Scoring",
+      "Roboter-Steuerung",
+      "Online-Multiplayer",
+      "Statistiken",
+      "PWA-Installation",
+      "Offline-Modus",
+    ],
     codeSnippet: {
       code: `export class AdvancedBot extends Bot {
   private readonly strategyEngine = new StrategyEngine();
@@ -99,39 +132,6 @@ const ENHANCED_PROJECT_DATA: Project[] = [
       language: "typescript",
       title: "Bot Klasse",
     },
-  },
-  {
-    id: 2,
-    title: "Dartsync",
-    content:
-      "Darts-App mit Roboter-Integration und Multiplayer gegen Freunde.",
-    description:
-      "Dartsync verbindet präzise Roboter-Technik mit einem sozialen Multiplayer-Erlebnis. Spiele lokal gegen den Roboter oder online gegen Freunde, verfolge Scores in Echtzeit und speichere Statistiken.",
-    image:
-      "DartSyncPage.png",
-    status: "completed",
-    startDate: "2024-08-01",
-    teamSize: 2,
-    duration: "5 months",
-    techStack: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Node.js",
-      "TailwindCSS",
-      "Supabase",
-      "PostgreSQL",
-    ],
-    githubUrl: "https://github.com/Leon-Achteresch/KampDarts",
-    liveUrl: "https://kamp-darts.vercel.app/",
-    features: [
-      "Echtzeit-Scoring",
-      "Roboter-Steuerung",
-      "Online-Multiplayer",
-      "Statistiken",
-      "PWA-Installation",
-      "Offline-Modus",
-    ],
   },
   {
     id: 3,
