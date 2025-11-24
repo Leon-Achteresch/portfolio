@@ -13,15 +13,13 @@ const careerPath = [
   {
     year: "2022",
     title: "Ausbildung Fachinformatiker Anwendungsentwicklung",
-    description: "Ausbildung zum Fachinformatiker Anwendungsentwicklung",
+    description: "Fundierte Ausbildung in Softwareentwicklung mit Fokus auf moderne Webtechnologien, Datenbanken und Softwarearchitekturen",
   },
   {
     year: "2025",
     title: "Softwareentwickler",
-    description: "Softwareentwickler",
+    description: "Entwicklung skalierbarer Webanwendungen mit React, Next.js und modernen Backend-Technologien",
   },
-
-
 ]
 
 const interests = [
@@ -73,9 +71,11 @@ export default function AboutMe() {
               Software Entwickler
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Ich bin ein Softwareentwickler, der sich für die Entwicklung von modernen Webanwendungen und Systemen
-              einsetzt. Meine Fähigkeiten umfassen die Entwicklung von Frontend-Anwendungen, Backend-Systemen,
-              Datenbanken und APIs.
+              Als leidenschaftlicher Softwareentwickler spezialisiere ich mich auf die Entwicklung
+              moderner, skalierbarer Webanwendungen. Mit umfassender Erfahrung in Frontend- und
+              Backend-Technologien bringe ich Projekte von der Konzeption bis zur Produktion.
+              Meine Stärken liegen in der Entwicklung benutzerfreundlicher Interfaces, robuster APIs
+              und effizienter Datenbankarchitekturen.
             </p>
           </div>
 
@@ -148,15 +148,31 @@ export default function AboutMe() {
             </Card>
           </div>
 
-          <Card className="p-6 mt-6">
-            <h2 className="text-2xl font-semibold mb-4">Kontakt</h2>
-            <p className="text-muted-foreground mb-4">
-              Ich freue mich über neue Projekte und Herausforderungen. Kontaktieren Sie mich gerne für weitere
-              Informationen.
+          <Card className="p-6 mt-6 bg-gradient-to-br from-primary/10 via-primary/5 to-primary/10 border-2 border-primary/20">
+            <h2 className="text-2xl font-semibold mb-4">Bereit für neue Herausforderungen</h2>
+            <p className="text-muted-foreground mb-6">
+              Ich suche nach spannenden Projekten und Möglichkeiten, meine Fähigkeiten einzubringen.
+              Lassen Sie uns gemeinsam innovative Lösungen entwickeln.
             </p>
-            <Button asChild className="w-full animate-buttonheartbeat">
-              <Link href="mailto:leon.achteresch@gmail.com">Kontakt aufnehmen</Link>
-            </Button>
+            <div className="space-y-3">
+              <Button asChild className="w-full animate-buttonheartbeat">
+                <Link href="mailto:leon.achteresch@gmail.com">Kontakt aufnehmen</Link>
+              </Button>
+              <div className="flex gap-2">
+                <Button asChild variant="outline" className="flex-1">
+                  <Link href="https://www.linkedin.com/in/leon-achteresch-b2a7472aa/" target="_blank">
+                    <Linkedin className="h-4 w-4 mr-2" />
+                    LinkedIn
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="flex-1">
+                  <Link href="https://www.xing.com/profile/Leon_Achteresch/" target="_blank">
+                    <Image src={XingImage} alt="Xing" width={16} height={16} className="mr-2" />
+                    Xing
+                  </Link>
+                </Button>
+              </div>
+            </div>
           </Card>
         </motion.div>
       </div>
