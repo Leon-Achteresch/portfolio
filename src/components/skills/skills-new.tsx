@@ -4,21 +4,12 @@ import { motion } from 'framer-motion';
 import { SectionHeader } from '@/components/ui/section-header';
 import { GlowingCard } from '@/components/ui/glowing-card';
 import { cn } from '@/lib/utils';
-import { Palette, Server, Database, Rocket, type LucideIcon } from 'lucide-react';
 
-interface SkillCategory {
-  id: string;
-  title: string;
-  icon: LucideIcon;
-  skills: { name: string; level: number }[];
-  gradient: string;
-}
-
-const skillCategories: SkillCategory[] = [
+const skillCategories = [
   {
     id: 'frontend',
     title: 'Frontend',
-    icon: Palette,
+    icon: '🎨',
     skills: [
       { name: 'React', level: 95 },
       { name: 'Next.js', level: 90 },
@@ -31,20 +22,20 @@ const skillCategories: SkillCategory[] = [
   {
     id: 'backend',
     title: 'Backend',
-    icon: Server,
+    icon: '⚙️',
     skills: [
       { name: 'Node.js', level: 85 },
       { name: 'C#', level: 80 },
-      { name: 'Java', level: 20 },
+      { name: 'Java', level: 75 },
       { name: 'Python', level: 70 },
-      { name: 'Delphi', level: 90 },
+      { name: 'REST APIs', level: 90 },
     ],
     gradient: 'from-green-500 to-emerald-500',
   },
   {
     id: 'database',
     title: 'Datenbanken',
-    icon: Database,
+    icon: '🗄️',
     skills: [
       { name: 'PostgreSQL', level: 85 },
       { name: 'MongoDB', level: 75 },
@@ -57,13 +48,13 @@ const skillCategories: SkillCategory[] = [
   {
     id: 'devops',
     title: 'DevOps & Tools',
-    icon: Rocket,
+    icon: '🚀',
     skills: [
       { name: 'Git', level: 95 },
       { name: 'Docker', level: 75 },
-      { name: 'Coolify', level: 90 },
+      { name: 'Vercel', level: 90 },
       { name: 'CI/CD', level: 80 },
-      { name: 'Kubernetes', level: 65 },
+      { name: 'AWS', level: 65 },
     ],
     gradient: 'from-orange-500 to-red-500',
   },
@@ -73,7 +64,7 @@ const highlights = [
   { label: 'Hauptsprache', value: 'TypeScript' },
   { label: 'Framework', value: 'Next.js' },
   { label: 'Datenbank', value: 'PostgreSQL' },
-  { label: 'Deployment', value: 'Coolify' },
+  { label: 'Deployment', value: 'Vercel' },
 ];
 
 function SkillBar({ name, level, gradient }: { name: string; level: number; gradient: string }) {
@@ -127,9 +118,7 @@ export default function Skills() {
             >
               <GlowingCard className="h-full">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className={cn('p-2 rounded-lg bg-gradient-to-br', category.gradient.replace('from-', 'from-').replace('to-', 'to-') + '/20')}>
-                    <category.icon className="w-6 h-6 text-foreground" />
-                  </div>
+                  <span className="text-3xl">{category.icon}</span>
                   <h3 className="text-xl font-bold">{category.title}</h3>
                 </div>
                 <div className="space-y-4">

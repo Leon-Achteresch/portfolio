@@ -1,10 +1,10 @@
-import { type FC } from "react";
-import Projects from "@/components/projects/projects";
-import AboutMe from "@/components/about-me/about-me";
-import HeroSection from "@/components/hero-section/hero-section";
-import Skills from "@/components/skills/skills";
-import { ScrollProgress } from "@/components/ui/scroll-progress";
-import { ReactLenis } from "lenis/react";
+import About from '@/components/about/about';
+import Hero from '@/components/hero/hero';
+import Projects from '@/components/projects/projects';
+import Skills from '@/components/skills/skills';
+import { ScrollProgress } from '@/components/ui/scroll-progress';
+import { ReactLenis } from 'lenis/react';
+import { type FC } from 'react';
 
 const Home: FC = () => {
   return (
@@ -12,16 +12,15 @@ const Home: FC = () => {
       root
       options={{
         duration: 1.2,
-
       }}
     >
-      <div className="smooth-scroll">
-        <main className="min-h-screen text-gray-900">
+      <div className='smooth-scroll'>
+        <main className='min-h-screen'>
           <ScrollProgress />
-          <HeroSection />
+          <Hero />
           <Skills />
           <Projects />
-          <AboutMe />
+          <About />
         </main>
       </div>
     </ReactLenis>

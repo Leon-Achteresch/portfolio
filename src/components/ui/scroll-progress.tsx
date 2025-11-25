@@ -1,6 +1,7 @@
-"use client";
-import { cn } from "@/lib/utils";
-import { motion, useScroll, useSpring } from "framer-motion";
+'use client';
+
+import { cn } from '@/lib/utils';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
 interface ScrollProgressProps {
   className?: string;
@@ -18,12 +19,10 @@ export function ScrollProgress({ className }: Readonly<ScrollProgressProps>) {
   return (
     <motion.div
       className={cn(
-        "fixed inset-x-0 top-0 z-[1000] h-1 origin-left bg-gradient-to-r from-pink-500/80 via-purple-500/80 to-blue-500/80",
-        className,
+        'fixed inset-x-0 top-0 z-[1000] h-1 origin-left bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-400',
+        className
       )}
-      style={{
-        scaleX,
-      }}
+      style={{ scaleX }}
     />
   );
 }

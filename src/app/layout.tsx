@@ -1,17 +1,30 @@
-import type { Metadata } from "next";
-import { Cabin } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider/theme-provider";
-import { ThemeSwitcher } from "@/components/theme-switcher/theme-switcher";
-import Dock from "@/components/toolbar/toolbar";
+import type { Metadata } from 'next';
+import { Inter, JetBrains_Mono } from 'next/font/google';
+import './globals.css';
+import { ThemeProvider } from '@/components/theme-provider/theme-provider';
+import { ThemeSwitcher } from '@/components/theme-switcher/theme-switcher';
+import Dock from '@/components/dock/dock';
 
-const CabinSans = Cabin({
-  subsets: ["latin"],
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
 });
 
 export const metadata: Metadata = {
-  title: "Leon Achteresch",
-  description: "Portfolio von Leon Achteresch",
+  title: 'Leon Achteresch | Software Entwickler',
+  description: 'Full-Stack Software Entwickler spezialisiert auf React, Next.js und TypeScript. Moderne Webanwendungen mit Fokus auf Benutzerfreundlichkeit und Performance.',
+  keywords: ['Software Entwickler', 'Web Development', 'React', 'Next.js', 'TypeScript', 'Full-Stack'],
+  authors: [{ name: 'Leon Achteresch' }],
+  openGraph: {
+    title: 'Leon Achteresch | Software Entwickler',
+    description: 'Full-Stack Software Entwickler spezialisiert auf React, Next.js und TypeScript.',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
@@ -20,19 +33,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${CabinSans.className} antialiased min-h-screen`}
-      >
+    <html lang="de" suppressHydrationWarning>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased min-h-screen`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
+          {children}
           <Dock />
           <ThemeSwitcher />
-          {children}
         </ThemeProvider>
       </body>
     </html>
