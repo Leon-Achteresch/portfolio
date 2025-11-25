@@ -77,7 +77,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6"
             >
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-sm text-blue-400">Verfügbar für neue Projekte</span>
+              {/* <span className="text-sm text-blue-400">Verfügbar für neue Projekte</span> */}
             </motion.div>
 
             <motion.h1
