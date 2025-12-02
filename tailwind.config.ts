@@ -10,42 +10,35 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-space)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-mono)', 'monospace'],
       },
       animation: {
-        buttonheartbeat: 'buttonheartbeat 2s infinite ease-in-out',
-        float: 'float 6s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'float-slow': 'float-slow 10s ease-in-out infinite',
         'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
-        shimmer: 'shimmer 2s infinite',
-        orbit: 'orbit var(--orbit-duration, 20s) linear infinite',
+        'spin-slow': 'spin 20s linear infinite',
+        'twinkle': 'twinkle 2s ease-in-out infinite',
+        'orbit': 'orbit var(--orbit-duration, 20s) linear infinite',
+        'nebula': 'nebula-pulse 8s ease-in-out infinite',
+        'engine': 'engine-pulse 0.5s ease-in-out infinite',
       },
       keyframes: {
-        buttonheartbeat: {
-          '0%': {
-            'box-shadow': '0 0 0 0 theme("colors.blue.500")',
-            transform: 'scale(1)',
-          },
-          '50%': {
-            'box-shadow': '0 0 0 7px theme("colors.blue.500/0")',
-            transform: 'scale(1.02)',
-          },
-          '100%': {
-            'box-shadow': '0 0 0 0 theme("colors.blue.500/0")',
-            transform: 'scale(1)',
-          },
-        },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
+        },
+        'float-slow': {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '50%': { transform: 'translateY(-30px) rotate(2deg)' },
         },
         'pulse-glow': {
           '0%, 100%': { opacity: '0.5' },
           '50%': { opacity: '1' },
         },
-        shimmer: {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' },
+        twinkle: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.3' },
         },
         orbit: {
           from: {
@@ -54,6 +47,14 @@ export default {
           to: {
             transform: 'rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg)',
           },
+        },
+        'nebula-pulse': {
+          '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+          '50%': { opacity: '0.6', transform: 'scale(1.1)' },
+        },
+        'engine-pulse': {
+          '0%, 100%': { opacity: '0.8', transform: 'scaleX(1)' },
+          '50%': { opacity: '1', transform: 'scaleX(1.5)' },
         },
       },
       colors: {

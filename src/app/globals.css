@@ -2,92 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  @variants responsive {
-    @media (min-width: 480px) {
-      .xs\:flex-row {
-        flex-direction: row;
-      }
-      .xs\:w-auto {
-        width: auto;
-      }
-      .xs\:items-center {
-        align-items: center;
-      }
-      .xs\:grid-cols-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .xs\:col-span-2 {
-        grid-column: span 2 / span 2;
-      }
-    }
-  }
-}
-
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 214 32% 91%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 214 32% 91%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 214 32% 91%;
-    --accent-foreground: 222 47% 11%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 217 91% 60%;
-    --radius: 0.75rem;
-  }
-
-  .dark {
-    --background: 222 47% 6%;
+    --background: 222 47% 2%;
     --foreground: 210 40% 98%;
-    --card: 222 47% 8%;
+    --card: 222 47% 4%;
     --card-foreground: 210 40% 98%;
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
     --primary: 217 91% 60%;
-    --primary-foreground: 222 47% 6%;
+    --primary-foreground: 222 47% 2%;
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
     --accent: 217 33% 17%;
     --accent-foreground: 210 40% 98%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
     --border: 217 33% 17%;
     --input: 217 33% 17%;
     --ring: 217 91% 60%;
+    --radius: 0.75rem;
   }
-}
 
-@layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#030712] text-white;
+    background: radial-gradient(ellipse at top, #0c1222 0%, #030712 50%, #010409 100%);
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.3);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.5);
+  }
+
+  ::selection {
+    background: rgba(59, 130, 246, 0.3);
+    color: white;
   }
 }
 
 @layer components {
   .text-gradient {
-    @apply bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-subtle {
-    @apply bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent;
   }
 
   .glass {
@@ -99,68 +73,140 @@
   }
 
   .glow {
-    box-shadow: 0 0 40px theme('colors.blue.500/20'), 0 0 80px theme('colors.blue.500/10');
-  }
-
-  .glow-sm {
-    box-shadow: 0 0 20px theme('colors.blue.500/15'), 0 0 40px theme('colors.blue.500/5');
+    box-shadow:
+      0 0 20px theme('colors.blue.500/20'),
+      0 0 40px theme('colors.blue.500/10'),
+      0 0 60px theme('colors.blue.500/5');
   }
 
   .glow-text {
-    text-shadow: 0 0 20px theme('colors.blue.400/50'), 0 0 40px theme('colors.blue.400/25');
+    text-shadow:
+      0 0 20px theme('colors.blue.400/50'),
+      0 0 40px theme('colors.blue.400/25'),
+      0 0 60px theme('colors.blue.400/10');
   }
 
-  .grid-pattern {
+  .galaxy-gradient {
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 60%);
+  }
+
+  .star-field {
     background-image:
-      linear-gradient(to right, theme('colors.blue.500/5') 1px, transparent 1px),
-      linear-gradient(to bottom, theme('colors.blue.500/5') 1px, transparent 1px);
-    background-size: 60px 60px;
+      radial-gradient(1px 1px at 20px 30px, white, transparent),
+      radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(1px 1px at 50px 160px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 90px 40px, white, transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 160px 120px, white, transparent);
+    background-size: 200px 200px;
   }
 
-  .noise {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  .nebula-glow {
+    position: relative;
+  }
+
+  .nebula-glow::before {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    animation: nebula-pulse 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .space-card {
+    @apply relative overflow-hidden rounded-2xl;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+  }
+
+  .space-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(59, 130, 246, 0.05) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .space-card:hover::before {
+    opacity: 1;
+  }
+
+  .planet-shadow {
+    box-shadow:
+      inset -20px -20px 40px rgba(0,0,0,0.5),
+      0 0 60px rgba(59, 130, 246, 0.2);
+  }
+
+  .engine-trail {
+    background: linear-gradient(90deg, rgba(96, 165, 250, 0.8) 0%, rgba(96, 165, 250, 0) 100%);
+    filter: blur(2px);
   }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+@keyframes nebula-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
 }
 
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+@keyframes star-twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(2deg); }
 }
 
-@keyframes orbit {
-  from { transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg); }
-  to { transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg); }
+@keyframes orbit-slow {
+  from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+@keyframes warp-speed {
+  0% { transform: translateZ(0) scale(1); opacity: 1; }
+  100% { transform: translateZ(200px) scale(0.5); opacity: 0; }
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
+@keyframes engine-pulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1.5);
+  }
 }
 
-.animate-shimmer {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    theme('colors.blue.400/20'),
-    transparent
-  );
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
+.animate-float-slow {
+  animation: float-slow 10s ease-in-out infinite;
 }
 
-.animate-orbit {
-  animation: orbit var(--orbit-duration, 20s) linear infinite;
+.animate-twinkle {
+  animation: star-twinkle 2s ease-in-out infinite;
+}
+
+.animate-orbit-slow {
+  animation: orbit-slow 30s linear infinite;
+}
+
+.animate-warp {
+  animation: warp-speed 0.5s ease-in forwards;
+}
+
+.animate-engine {
+  animation: engine-pulse 0.5s ease-in-out infinite;
 }

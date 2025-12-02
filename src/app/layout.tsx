@@ -1,13 +1,10 @@
 import type { Metadata } from 'next';
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from '@/components/theme-provider/theme-provider';
-import { ThemeSwitcher } from '@/components/theme-switcher/theme-switcher';
-import Dock from '@/components/dock/dock';
 
-const inter = Inter({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-space',
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -16,13 +13,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Leon Achteresch | Software Entwickler',
-  description: 'Full-Stack Software Entwickler spezialisiert auf React, Next.js und TypeScript. Moderne Webanwendungen mit Fokus auf Benutzerfreundlichkeit und Performance.',
-  keywords: ['Software Entwickler', 'Web Development', 'React', 'Next.js', 'TypeScript', 'Full-Stack'],
+  title: 'Leon Achteresch | Software Entwickler | Galaxy Portfolio',
+  description: 'Full-Stack Software Entwickler spezialisiert auf React, Next.js und TypeScript. Erlebe mein Portfolio als interaktive Galaxie-Reise.',
+  keywords: ['Software Entwickler', 'Web Development', 'React', 'Next.js', 'TypeScript', 'Full-Stack', 'Three.js', 'WebGL'],
   authors: [{ name: 'Leon Achteresch' }],
   openGraph: {
-    title: 'Leon Achteresch | Software Entwickler',
-    description: 'Full-Stack Software Entwickler spezialisiert auf React, Next.js und TypeScript.',
+    title: 'Leon Achteresch | Galaxy Portfolio',
+    description: 'Erlebe ein einzigartiges Portfolio als interaktive 3D Galaxie-Reise.',
     type: 'website',
   },
 };
@@ -33,18 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" suppressHydrationWarning>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased min-h-screen`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Dock />
-          <ThemeSwitcher />
-        </ThemeProvider>
+    <html lang="de" className="dark">
+      <body className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased bg-[#030712] text-white overflow-x-hidden`}>
+        {children}
       </body>
     </html>
   );
