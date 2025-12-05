@@ -1,13 +1,16 @@
 'use client';
 
+import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
 
 interface SpaceshipProps {
   targetPosition: [number, number, number];
   targetRotation?: [number, number, number];
 }
+
+useGLTF.preload('/models/xwing_lp.glb');
 
 export function Spaceship({
   targetPosition,
@@ -20,6 +23,37 @@ export function Spaceship({
   const currentPosition = useRef(new THREE.Vector3(0, 0, 10));
   const currentRotation = useRef(new THREE.Euler(0, 0, 0));
   const velocity = useRef(new THREE.Vector3());
+
+  const { scene } = useGLTF('/models/xwing_lp.glb');
+
+  const clonedScene = useMemo(() => {
+    const clone = scene.clone();
+    clone.traverse(child => {
+      if (child instanceof THREE.Mesh) {
+        child.material = new THREE.MeshStandardMaterial({
+          color: '#1e293b',
+          emissive: '#3b82f6',
+          emissiveIntensity: 0.15,
+          metalness: 0.9,
+          roughness: 0.2,
+        });
+      }
+    });
+    return clone;
+  }, [scene]);
+
+  useEffect(() => {
+    return () => {
+      clonedScene.traverse(child => {
+        if (child instanceof THREE.Mesh) {
+          child.geometry?.dispose();
+          if (child.material instanceof THREE.Material) {
+            child.material.dispose();
+          }
+        }
+      });
+    };
+  }, [clonedScene]);
 
   const trailPositions = useMemo(() => {
     const positions = new Float32Array(150);
@@ -84,63 +118,26 @@ export function Spaceship({
   return (
     <>
       <group ref={groupRef}>
-        <mesh>
-          <boxGeometry args={[0.8, 0.3, 2]} />
-          <meshStandardMaterial
-            color='#1e293b'
-            emissive='#3b82f6'
-            emissiveIntensity={0.2}
-            metalness={0.9}
-            roughness={0.2}
-          />
-        </mesh>
+        <primitive
+          object={clonedScene}
+          scale={2}
+          rotation={[0, Math.PI, 0]}
+        />
 
-        <mesh position={[0, 0.2, -0.3]}>
-          <boxGeometry args={[0.3, 0.15, 0.5]} />
-          <meshStandardMaterial
-            color='#0f172a'
-            emissive='#60a5fa'
-            emissiveIntensity={0.3}
-            metalness={0.9}
-            roughness={0.1}
-          />
-        </mesh>
-
-        <mesh position={[-0.5, 0, 0.3]}>
-          <boxGeometry args={[0.6, 0.1, 0.8]} />
-          <meshStandardMaterial
-            color='#1e293b'
-            emissive='#3b82f6'
-            emissiveIntensity={0.2}
-            metalness={0.8}
-            roughness={0.3}
-          />
-        </mesh>
-        <mesh position={[0.5, 0, 0.3]}>
-          <boxGeometry args={[0.6, 0.1, 0.8]} />
-          <meshStandardMaterial
-            color='#1e293b'
-            emissive='#3b82f6'
-            emissiveIntensity={0.2}
-            metalness={0.8}
-            roughness={0.3}
-          />
-        </mesh>
-
-        <mesh ref={engineGlowRef} position={[0, 0, 1.2]}>
-          <sphereGeometry args={[0.25, 16, 16]} />
+        <mesh ref={engineGlowRef} position={[0, 0, 0.8]}>
+          <sphereGeometry args={[0.15, 16, 16]} />
           <meshBasicMaterial color='#60a5fa' transparent opacity={0.8} />
         </mesh>
 
         <pointLight
-          position={[0, 0, 1.5]}
+          position={[0, 0, 1]}
           color='#60a5fa'
           intensity={3}
           distance={5}
         />
 
         <pointLight
-          position={[0, 0, -1]}
+          position={[0, 0, -0.5]}
           color='#3b82f6'
           intensity={1}
           distance={3}

@@ -1,8 +1,20 @@
-export { GalaxyScene, sections } from './GalaxyScene';
-export { Stars } from './Stars';
+export { GalaxyScene } from './GalaxyScene';
+export { NavigationDots } from './NavigationDots';
 export { Nebula } from './Nebula';
 export { Planet } from './Planet';
-export { Spaceship } from './Spaceship';
+export { ProjectDialog } from './ProjectDialog';
+export { Scene } from './Scene';
 export { SectionOverlay } from './SectionOverlay';
-export { NavigationDots } from './NavigationDots';
-export { ContentSections } from './ContentSections';
+export { Spaceship } from './Spaceship';
+export { Stars } from './Stars';
+export {
+  mainSections,
+  navigationSections,
+  planets,
+  sections,
+  skills,
+} from './constants';
+export { ContactStation } from './contact-station';
+export { HeroStation } from './hero-station';
+export { ProjectHolograms } from './project-holograms';
+export { SkillComets } from './skill-comets';

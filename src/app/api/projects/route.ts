@@ -26,7 +26,7 @@ const ENHANCED_PROJECT_DATA: Project[] = [
       "PWA",
     ],
     githubUrl: "https://github.com/Leon-Achteresch/KampDarts",
-    liveUrl: "https://kamp-darts.vercel.app/",
+    liveUrl: "https://kickcompare.de/",
     features: [
       "Produktvergleich mit Filteroptionen",
       "Detaillierte Produktspezifikationen",
@@ -59,7 +59,7 @@ const ENHANCED_PROJECT_DATA: Project[] = [
       "PostgreSQL",
     ],
     githubUrl: "https://github.com/Leon-Achteresch/KampDarts",
-    liveUrl: "https://kamp-darts.vercel.app/",
+    liveUrl: "https://dartsync.de/",
     features: [
       "Echtzeit-Scoring",
       "Roboter-Steuerung",
@@ -71,11 +71,11 @@ const ENHANCED_PROJECT_DATA: Project[] = [
   },
   {
     id: 3,
-    title: "Portfolio",
-    content:
-      "Mein Portfolio, dass die meisten Projekte und meine Erfahrungen darstellt.",
+    title: "WorkSheer",
+      content:
+        "Mein All in One Tool, welches ich im Laufe der Zeit immer weiter ausbaue und verbessere.",
     description:
-      "Ein modernes, responsives Portfolio, das meine Projekte, Fähigkeiten und beruflichen Erfahrungen präsentiert. Die Seite wurde mit Fokus auf Performance, Zugänglichkeit und benutzerfreundliches Design entwickelt.",
+      "Ein modernes, responsives Tool, welches ich im Laufe der Zeit immer weiter ausbaue und verbessere. Die Seite wurde mit Fokus auf Performance, Zugänglichkeit und benutzerfreundliches Design entwickelt.",
     image: "image.png",
     status: "completed",
     startDate: "2025-02-20",
@@ -90,14 +90,14 @@ const ENHANCED_PROJECT_DATA: Project[] = [
       "Vercel",
     ],
     githubUrl: "https://github.com/Leon-Achteresch/portfolio",
-    liveUrl: "https://portfolio.example.com",
+    liveUrl: "https://lync3.leon-achteresch.de",
     features: [
       "Responsive Design",
-      "Dark Mode",
-      "Projekt-Showcase",
-      "Blog-Integration",
-      "Kontaktformular",
-      "Animationen",
+      "Einkaufsliste",
+      "Projekt-Managment",
+      "Task-Management",
+      "Calendar",
+      "Notes",
     ],
   },
 ];
